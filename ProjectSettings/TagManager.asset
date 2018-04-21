@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - SoundBar
+  - ResetPoint
   layers:
   - Default
   - TransparentFX
