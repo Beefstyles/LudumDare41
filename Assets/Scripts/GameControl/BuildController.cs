@@ -31,7 +31,7 @@ public class BuildController : MonoBehaviour {
                 else
                 {
                     _buildMenuUp = false;
-                    ToggleBuildMenu(_buildMenuUp);
+                    //ToggleBuildMenu(_buildMenuUp);
                 }
             }
             
