@@ -11,7 +11,12 @@ public class GameController : MonoBehaviour {
     private float _moneyLeft;
     public bool GameOn;
     GameText _gameText;
+    private int _currentSelectedBuildingCost;
 
+    private void Start()
+    {
+        _gameText = GetComponent<GameText>();
+    }
     public int NumberOfLivesLeft
     {
         get
@@ -69,6 +74,20 @@ public class GameController : MonoBehaviour {
         {
             _moneyLeft = value;
             _gameText.MoneyTextUpdate();
+        }
+    }
+
+    public int CurrentSelectedBuildingCost
+    {
+        get
+        {
+            return _currentSelectedBuildingCost;
+        }
+
+        set
+        {
+            _currentSelectedBuildingCost = value;
+            _gameText.CurrentBuildingCostTextUpdate(_currentSelectedBuildingCost);
         }
     }
 

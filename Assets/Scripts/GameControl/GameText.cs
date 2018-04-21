@@ -6,9 +6,9 @@ using UnityEngine;
 
 public class GameText : MonoBehaviour {
 
-    public TextMeshPro MoneyText, RoundText, LivesText, EnemiesLeftText;
+    public TextMeshPro MoneyText, RoundText, LivesText, EnemiesLeftText, CurrentBuildingCostText;
 
-    GameController _gameController;
+    private GameController _gameController;
 
     void Start()
     {
@@ -36,6 +36,10 @@ public class GameText : MonoBehaviour {
 
     public void EnemiesLeftTextUpdate()
     {
-        LivesText.text = string.Format("Left: {0}", _gameController.NumberOfEnemiesLeft);
+        EnemiesLeftText.text = string.Format("Left: {0}", _gameController.NumberOfEnemiesLeft);
+    }
+    public void CurrentBuildingCostTextUpdate(int value)
+    {
+        CurrentBuildingCostText.text = value.ToString();
     }
 }

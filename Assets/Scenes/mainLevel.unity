@@ -882,6 +882,12 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 277535031}
+--- !u!114 &322857965 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11400000, guid: a6a60659abb4d9d4b934feebd3dcc952,
+    type: 2}
+  m_PrefabInternal: {fileID: 227328719}
+  m_Script: {fileID: -806885394, guid: 89f0137620f6af44b9ba852b4190e64e, type: 3}
 --- !u!1001 &371076385
 Prefab:
   m_ObjectHideFlags: 0
@@ -2683,9 +2689,11 @@ GameObject:
   - component: {fileID: 973848696}
   - component: {fileID: 973848695}
   - component: {fileID: 973848694}
+  - component: {fileID: 973848697}
+  - component: {fileID: 973848698}
   m_Layer: 0
   m_Name: Note3Select
-  m_TagString: Untagged
+  m_TagString: BuildingSpawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2757,6 +2765,30 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 973848692}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &973848697
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 973848692}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 5.5732555, z: 1}
+  m_Center: {x: 0, y: 2.2866278, z: 0}
+--- !u!114 &973848698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 973848692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e1d550d9c1a0324f88a052b285d83d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectileTypes: 2
 --- !u!1 &989801365
 GameObject:
   m_ObjectHideFlags: 0
@@ -2768,9 +2800,11 @@ GameObject:
   - component: {fileID: 989801369}
   - component: {fileID: 989801368}
   - component: {fileID: 989801367}
+  - component: {fileID: 989801370}
+  - component: {fileID: 989801371}
   m_Layer: 0
   m_Name: Note1Select
-  m_TagString: Untagged
+  m_TagString: BuildingSpawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2842,6 +2876,30 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 989801365}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &989801370
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 989801365}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 5.5732555, z: 1}
+  m_Center: {x: 0, y: 2.2866278, z: 0}
+--- !u!114 &989801371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 989801365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e1d550d9c1a0324f88a052b285d83d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectileTypes: 0
 --- !u!114 &991463778 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11400000, guid: a6a60659abb4d9d4b934feebd3dcc952,
@@ -3367,6 +3425,7 @@ GameObject:
   - component: {fileID: 1245987959}
   - component: {fileID: 1245987961}
   - component: {fileID: 1245987962}
+  - component: {fileID: 1245987963}
   m_Layer: 0
   m_Name: GameControllerObject
   m_TagString: Untagged
@@ -3433,6 +3492,18 @@ MonoBehaviour:
   RoundText: {fileID: 384339327}
   LivesText: {fileID: 1271389813}
   EnemiesLeftText: {fileID: 656932252}
+  CurrentBuildingCostText: {fileID: 322857965}
+--- !u!114 &1245987963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1245987958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54e5a30fd86d85e46a419156d7f7b2a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1251955837
 GameObject:
   m_ObjectHideFlags: 0
@@ -3974,9 +4045,11 @@ GameObject:
   - component: {fileID: 1570477365}
   - component: {fileID: 1570477364}
   - component: {fileID: 1570477363}
+  - component: {fileID: 1570477366}
+  - component: {fileID: 1570477367}
   m_Layer: 0
   m_Name: Note2Select
-  m_TagString: Untagged
+  m_TagString: BuildingSpawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4048,6 +4121,30 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1570477361}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &1570477366
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1570477361}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 5.5732555, z: 1}
+  m_Center: {x: 0, y: 2.2866278, z: 0}
+--- !u!114 &1570477367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1570477361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e1d550d9c1a0324f88a052b285d83d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectileTypes: 1
 --- !u!1001 &1579068799
 Prefab:
   m_ObjectHideFlags: 0
@@ -4847,9 +4944,11 @@ GameObject:
   - component: {fileID: 1952236359}
   - component: {fileID: 1952236358}
   - component: {fileID: 1952236357}
+  - component: {fileID: 1952236360}
+  - component: {fileID: 1952236361}
   m_Layer: 0
   m_Name: Note4Select
-  m_TagString: Untagged
+  m_TagString: BuildingSpawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4921,6 +5020,30 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1952236355}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &1952236360
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1952236355}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 5.5732555, z: 1}
+  m_Center: {x: 0, y: 2.2866278, z: 0}
+--- !u!114 &1952236361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1952236355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e1d550d9c1a0324f88a052b285d83d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectileTypes: 3
 --- !u!1001 &1953076107
 Prefab:
   m_ObjectHideFlags: 0
