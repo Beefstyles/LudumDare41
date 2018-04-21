@@ -10,7 +10,7 @@ public class LevelReader : MonoBehaviour {
     private string _jsonLevelData;
     private string[] _levelArray;
     private int _gridXSize, _gridYSize;
-    private float _initialMoney;
+    private decimal _initialMoney;
     private int _numberOfRounds;
 
     private LevelPopulator _levelPopulator;
@@ -37,7 +37,7 @@ public class LevelReader : MonoBehaviour {
         */
         public string Title;
         public int GridXSize, GridYSize;
-        public float Money;
+        public decimal Money;
         public int NumberOfRounds;
         public string[] LevelGridArray;
     }
@@ -47,13 +47,14 @@ public class LevelReader : MonoBehaviour {
         try
         {
             _jsonLevelData = File.ReadAllText(Application.dataPath + "/Resources/Levels/Level_1.json");
+            ParseJSONLevelDataToClass();
+            _levelPopulator = GetComponent<LevelPopulator>();
+            StartCoroutine(_levelPopulator.PopulateLevel(_levelArray, _gridXSize, _gridYSize));
         }
         catch (Exception e)
         {
             Debug.LogError("Error in loading the json level data file: " + e.Message);
         }
-        ParseJSONLevelDataToClass();
-        _levelPopulator = GetComponent<LevelPopulator>();
     }
 
     private void ParseJSONLevelDataToClass()
