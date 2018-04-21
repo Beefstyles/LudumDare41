@@ -8,6 +8,7 @@ TagManager:
   - ResetPoint
   - Waypoint
   - Enemy
+  - TurrentSpawn
   layers:
   - Default
   - TransparentFX
