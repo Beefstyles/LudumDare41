@@ -5,5 +5,6 @@ using UnityEngine;
 public class Projectile : MonoBehaviour {
 
     public ProjectileTypes projectileType;
+    public int Damage;
 
 }

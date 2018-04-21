@@ -10,6 +10,7 @@ TagManager:
   - Enemy
   - TurrentSpawn
   - BuildingSpawn
+  - Projectile
   layers:
   - Default
   - TransparentFX

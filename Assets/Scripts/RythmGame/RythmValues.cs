@@ -4,19 +4,39 @@ using UnityEngine;
 
 public class RythmValues : MonoBehaviour {
 
-    public int[] Note1Values;
-    public int[] Note2Values;
-    public int[] Note3Values;
-    public int[] Note4Values;
+    public int[] FireValues = new int[12];
+    public int[] Note2Values = new int[12];
+    public int[] Note3Values = new int[12];
+    public int[] Note4Values = new int[12];
 
+    BuildingInfo _buildingInfo;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
+	void Start ()
+    {
+        _buildingInfo = FindObjectOfType<BuildingInfo>();
+    }
 	
-	// Update is called once per frame
-	void Update () {
-		
+	void Update ()
+    {
+        
 	}
+
+    void UpdateFireNotes()
+    {
+        switch (_buildingInfo.CurrentFireBuildingLevel)
+        {
+            case (0):
+                FireValues = new int [] { 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 0};
+                break;
+            case (1):
+                FireValues = new int[] { 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0 };
+                break;
+            case (2):
+                FireValues = new int[] { 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0 };
+                break;
+            case (3):
+                FireValues = new int[] { 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1 };
+                break;
+        }
+    }
 }

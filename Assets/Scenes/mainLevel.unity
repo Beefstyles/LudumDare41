@@ -3504,6 +3504,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54e5a30fd86d85e46a419156d7f7b2a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CurrentFireBuildingLevel: 0
 --- !u!1 &1251955837
 GameObject:
   m_ObjectHideFlags: 0
@@ -3608,6 +3609,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &1357742533 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1520166634188642, guid: 1c93599dd24494847a14ddd6ae40dad7,
+    type: 2}
+  m_PrefabInternal: {fileID: 512506929}
+--- !u!114 &1357742534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1357742533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3fa9be826aefa43badf4aa376849d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 100
+  MoneyFromKill: 100
 --- !u!1001 &1380375002
 Prefab:
   m_ObjectHideFlags: 0
