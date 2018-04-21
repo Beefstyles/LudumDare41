@@ -6,8 +6,9 @@ public class BuildController : MonoBehaviour {
 
     private RaycastHit _hit;
     public Transform CurrentTurretSpawnPoint;
-    private bool _buildMenuUp;
+    private bool _buildMenuUp = false;
     public GameObject BuildMenu;
+    public GameObject FireTurret, IceTurret, PoisonTurret, EarthTurret;
 
 	void Update()
     {
@@ -24,14 +25,16 @@ public class BuildController : MonoBehaviour {
                         _buildMenuUp = true;
                      
                     }
+                    ToggleBuildMenu(_buildMenuUp);
                     Debug.Log("Can spawn here");
                 }
+                else
+                {
+                    _buildMenuUp = false;
+                    ToggleBuildMenu(_buildMenuUp);
+                }
             }
-            else
-            {
-                _buildMenuUp = false;
-                ToggleBuildMenu(_buildMenuUp);
-            }
+            
         }
     }
 
