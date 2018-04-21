@@ -13,7 +13,7 @@ public class LevelPopulator : MonoBehaviour {
 
     public IEnumerator PopulateLevel(string[] levelText, int gridXSize, int gridZSize)
     {
-        LevelGrid.transform.localScale = new Vector3(gridXSize, 1F, gridZSize);
+        LevelGrid.transform.localScale = new Vector3(gridXSize / 10, 1F, gridZSize / 10);
         _levelGridRenderer = LevelGrid.GetComponent<Renderer>();
         _levelGridRenderer.material.mainTextureScale = new Vector2(gridXSize, gridZSize);
         for (int i = 0; i < levelText.Length; i++)
@@ -21,9 +21,11 @@ public class LevelPopulator : MonoBehaviour {
             char[] levelTextChar = levelText[i].ToCharArray();
             for (int j = 0; j < levelText.Length; j++)
             {
-                _xPosition = j - (gridZSize / 2 - 0.5F);
-                _zPosition = (gridZSize / 2 - 0.5F) - i;
-                _objectPosition = new Vector3(_xPosition, 10, _zPosition);
+                //_xPosition = j - (gridZSize / 2 - 0.5F);
+                _xPosition = j - (gridZSize / 2);
+                //_zPosition = (gridZSize / 2 - 0.5F) - i;
+                _zPosition = (gridZSize / 2) - i;
+                _objectPosition = new Vector3(_xPosition, 1, _zPosition);
 
                 GameObject gridRefBlock = Instantiate(GridRefBlock, _objectPosition, Quaternion.identity) as GameObject;
                 gridRefBlock.name = "(" + _xPosition + "," + _zPosition + ")";

@@ -15,6 +15,8 @@ public class LevelReader : MonoBehaviour {
 
     private LevelPopulator _levelPopulator;
 
+    public bool TryToPopulateLevel;
+
 
     /*
      * Title": "FirstLevel",
@@ -44,16 +46,19 @@ public class LevelReader : MonoBehaviour {
 
     void Awake()
     {
-        try
+        if (TryToPopulateLevel)
         {
-            _jsonLevelData = File.ReadAllText(Application.dataPath + "/Resources/Levels/Level_1.json");
-            ParseJSONLevelDataToClass();
-            _levelPopulator = GetComponent<LevelPopulator>();
-            StartCoroutine(_levelPopulator.PopulateLevel(_levelArray, _gridXSize, _gridYSize));
-        }
-        catch (Exception e)
-        {
-            Debug.LogError("Error in loading the json level data file: " + e.Message);
+            try
+            {
+                _jsonLevelData = File.ReadAllText(Application.dataPath + "/Resources/Levels/Level_1.json");
+                ParseJSONLevelDataToClass();
+                _levelPopulator = GetComponent<LevelPopulator>();
+                StartCoroutine(_levelPopulator.PopulateLevel(_levelArray, _gridXSize, _gridYSize));
+            }
+            catch (Exception e)
+            {
+                Debug.LogError("Error in loading the json level data file: " + e.Message);
+            }
         }
     }
 
