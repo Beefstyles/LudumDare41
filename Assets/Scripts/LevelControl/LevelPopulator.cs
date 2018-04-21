@@ -25,7 +25,7 @@ public class LevelPopulator : MonoBehaviour {
                 _xPosition = j - (gridZSize / 2);
                 //_zPosition = (gridZSize / 2 - 0.5F) - i;
                 _zPosition = (gridZSize / 2) - i;
-                _objectPosition = new Vector3(_xPosition, 1, _zPosition);
+                _objectPosition = new Vector3(_xPosition + 10, 1, _zPosition);
 
                 GameObject gridRefBlock = Instantiate(GridRefBlock, _objectPosition, Quaternion.identity) as GameObject;
                 gridRefBlock.name = "(" + _xPosition + "," + _zPosition + ")";
