@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum NoteNumbers
+{
+    Note1, Note2, Note3, Note4, Beat
+};
+
 public class SoundBarMovement : MonoBehaviour {
 
     [Range(0.0F, 10.0F)]
