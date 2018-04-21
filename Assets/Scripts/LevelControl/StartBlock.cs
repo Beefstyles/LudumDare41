@@ -23,7 +23,7 @@ public class StartBlock : MonoBehaviour {
                 _lookRot = waypoint.gameObject.transform;
             }
         }
-        gameObject.transform.LookAt(gameObject.transform.position - _lookRot.transform.position);
+        gameObject.transform.LookAt(_lookRot.transform.position);
     }
 
 

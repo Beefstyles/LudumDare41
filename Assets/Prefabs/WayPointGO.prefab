@@ -52,6 +52,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4597299981585164}
   - component: {fileID: 114891433155892264}
+  - component: {fileID: 65763253863782772}
+  - component: {fileID: 114158305564686362}
   m_Layer: 0
   m_Name: WayPointGO
   m_TagString: Untagged
@@ -80,8 +82,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1457040662189622}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4745287892990812}
@@ -94,7 +96,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1520166634188642}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -11.62, y: 0.95, z: 13.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4835262136912686}
@@ -170,6 +172,29 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1457040662189622}
   m_Mesh: {fileID: 4300000, guid: 8c2046d7cd4386a4d86311c22c8fb96f, type: 3}
+--- !u!65 &65763253863782772
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1520166634188642}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114158305564686362
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1520166634188642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb410dccf3bd6854ab4a0d6e4150f73c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114891433155892264
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -181,4 +206,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 710a70fcd9a6fa649926ceacb0a6c665, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WayPointNumber: 0
+  WayPointNumber: 1
