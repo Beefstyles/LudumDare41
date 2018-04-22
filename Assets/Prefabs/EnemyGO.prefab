@@ -211,7 +211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d3fa9be826aefa43badf4aa376849d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 100
+  Health: 10
   MoneyFromKill: 100
 --- !u!114 &114838238521054314
 MonoBehaviour:
