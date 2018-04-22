@@ -1763,48 +1763,6 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 232879746}
   m_Script: {fileID: -806885394, guid: 89f0137620f6af44b9ba852b4190e64e, type: 3}
---- !u!1001 &695343858
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4597299981585164, guid: f3108509c17559142925c5fe01baa451, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -9.09
-      objectReference: {fileID: 0}
-    - target: {fileID: 4597299981585164, guid: f3108509c17559142925c5fe01baa451, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 1.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4597299981585164, guid: f3108509c17559142925c5fe01baa451, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 13.47
-      objectReference: {fileID: 0}
-    - target: {fileID: 4597299981585164, guid: f3108509c17559142925c5fe01baa451, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4597299981585164, guid: f3108509c17559142925c5fe01baa451, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4597299981585164, guid: f3108509c17559142925c5fe01baa451, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4597299981585164, guid: f3108509c17559142925c5fe01baa451, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4597299981585164, guid: f3108509c17559142925c5fe01baa451, type: 2}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: f3108509c17559142925c5fe01baa451, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1001 &715380434
 Prefab:
   m_ObjectHideFlags: 0
@@ -3414,6 +3372,73 @@ Transform:
   m_PrefabParentObject: {fileID: 4289253778466664, guid: be972adf573be6648ae03d1e0918e8b1,
     type: 2}
   m_PrefabInternal: {fileID: 1178562166}
+--- !u!1001 &1187504580
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4597299981585164, guid: ab7266d8e443d9142a2d0265b3beff06, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597299981585164, guid: ab7266d8e443d9142a2d0265b3beff06, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597299981585164, guid: ab7266d8e443d9142a2d0265b3beff06, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597299981585164, guid: ab7266d8e443d9142a2d0265b3beff06, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597299981585164, guid: ab7266d8e443d9142a2d0265b3beff06, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597299981585164, guid: ab7266d8e443d9142a2d0265b3beff06, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597299981585164, guid: ab7266d8e443d9142a2d0265b3beff06, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597299981585164, guid: ab7266d8e443d9142a2d0265b3beff06, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152136126343626, guid: ab7266d8e443d9142a2d0265b3beff06, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152136126343626, guid: ab7266d8e443d9142a2d0265b3beff06, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152136126343626, guid: ab7266d8e443d9142a2d0265b3beff06, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4835262136912686, guid: ab7266d8e443d9142a2d0265b3beff06, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4835262136912686, guid: ab7266d8e443d9142a2d0265b3beff06, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: ab7266d8e443d9142a2d0265b3beff06, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1 &1187504581 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1520166634188642, guid: ab7266d8e443d9142a2d0265b3beff06,
+    type: 2}
+  m_PrefabInternal: {fileID: 1187504580}
 --- !u!1 &1245987958
 GameObject:
   m_ObjectHideFlags: 0
@@ -3473,10 +3498,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CurrentTurretSpawnPoint: {fileID: 0}
   BuildMenu: {fileID: 550249226}
-  FireTurret: {fileID: 0}
+  FireTurret: {fileID: 1520166634188642, guid: f3108509c17559142925c5fe01baa451, type: 2}
   IceTurret: {fileID: 0}
   PoisonTurret: {fileID: 0}
   EarthTurret: {fileID: 0}
+  SelectedTurretSpawnLocation: {fileID: 1187504581}
 --- !u!114 &1245987962
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4800,7 +4826,7 @@ GameObject:
   - component: {fileID: 1928506931}
   m_Layer: 0
   m_Name: BUILD
-  m_TagString: Untagged
+  m_TagString: BuildButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4860,11 +4886,11 @@ BoxCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1928506929}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 5.5732555, z: 1}
+  m_Center: {x: 0, y: 2.2866278, z: 0}
 --- !u!33 &1928506933
 MeshFilter:
   m_ObjectHideFlags: 0
