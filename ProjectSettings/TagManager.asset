@@ -17,6 +17,7 @@ TagManager:
   - New tag
   - UpgradeButton
   - Building
+  - EndOfGameMenuButton
   layers:
   - Default
   - TransparentFX

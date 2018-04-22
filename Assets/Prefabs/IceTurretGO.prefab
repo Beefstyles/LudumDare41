@@ -268,7 +268,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Projectile: {fileID: 1520166634188642, guid: b004dea292c27b04b991550213544d0a, type: 2}
   TargetTransform: {fileID: 0}
-  StrengthOfShot: 100
+  StrengthOfShot: 20
   ReloadSpeed: 0.5
   HaveTarget: 0
 --- !u!136 &136272381202866168

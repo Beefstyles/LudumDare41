@@ -17,6 +17,7 @@ public class EnemyControl : MonoBehaviour {
     {
         _levelController = FindObjectOfType<LevelController>();
         SetNewWaypoint();
+        Speed *= _levelController.SpeedOfEnemiesMultiplication;
     }
 	
 	void Update ()

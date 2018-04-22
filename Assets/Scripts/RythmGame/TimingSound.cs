@@ -151,7 +151,7 @@ public class TimingSound : MonoBehaviour {
                 _rythmSounds.MissedNoteEntirely.Play();
                 _noteToBeHit = false;
                 _streakCounter.StreakCounterVal = 0;
-                _streakCounter.DamageMultiplierVal = 0;
+                _streakCounter.DamageMultiplierVal = 1;
             }
 
             switch (note)

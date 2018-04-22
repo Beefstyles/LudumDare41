@@ -202,6 +202,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileType: 2
   Damage: 10
+  FreezeTime: 0
+  PoisonAmount: 0
 --- !u!135 &135542326450210806
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -3590,7 +3592,7 @@ ParticleSystemRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31a0c8f778fa69841b98ab5886545bcc, type: 2}
+  - {fileID: 2100000, guid: 1e2f3e15b64ade843bd2f095c3f53dd3, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0

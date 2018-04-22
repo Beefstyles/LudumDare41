@@ -5,15 +5,19 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour {
 
     private Projectile _projectile;
-    public decimal Health;
+    public float Health;
     public int MoneyFromKill;
     private GameController _gameController;
     private StreakCounter _streakCounter;
+    private LevelController _levelController;
 
     private void Start()
     {
         _gameController = FindObjectOfType<GameController>();
         _streakCounter = FindObjectOfType<StreakCounter>();
+        _levelController = FindObjectOfType<LevelController>();
+
+        Health *= _levelController.HealthOfEnemiesMultiplication;
     }
 
     void OnTriggerEnter(Collider coll)
@@ -21,7 +25,7 @@ public class EnemyHealth : MonoBehaviour {
         if(coll.gameObject.tag == "Projectile")
         {
             _projectile = coll.GetComponent<Projectile>();
-            switch (_projectile.projectileType)
+            /*switch (_projectile.projectileType)
             {
                 case (ProjectileTypes.Fire):
                     break;
@@ -32,8 +36,12 @@ public class EnemyHealth : MonoBehaviour {
                 case (ProjectileTypes.Earth):
                     break;
             }
-            Health -= _projectile.Damage * _streakCounter.DamageMultiplierVal;
-            Destroy(_projectile);
+            */
+            if(_projectile != null)
+            {
+                Health -= _projectile.Damage * (float)_streakCounter.DamageMultiplierVal;
+                Destroy(_projectile);
+            }
             if (Health <= 0)
             {
                 HandleDeath();

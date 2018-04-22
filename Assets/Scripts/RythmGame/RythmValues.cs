@@ -35,13 +35,13 @@ public class RythmValues : MonoBehaviour
                 FireValues = new int[] { 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0 };
                 break;
             case (1):
-                FireValues = new int[] { 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0 };
+                FireValues = new int[] { 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1, 0 };
                 break;
             case (2):
-                FireValues = new int[] { 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0 };
+                FireValues = new int[] { 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0 };
                 break;
             case (3):
-                FireValues = new int[] { 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1 };
+                FireValues = new int[] { 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1 };
                 break;
         }
     }
@@ -51,17 +51,16 @@ public class RythmValues : MonoBehaviour
         switch (_buildingInfo.CurrentIceBuildingLevel)
         {
             case (0):
-                //IceValues = new int[] { 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0 };
-                IceValues = new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+                IceValues = new int[] { 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0 };
                 break;
             case (1):
                 IceValues = new int[] { 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0 };
                 break;
             case (2):
-                IceValues = new int[] { 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0 };
+                IceValues = new int[] { 0, 1, 1, 1, 1, 0, 1, 0, 0, 1, 1, 0 };
                 break;
             case (3):
-                IceValues = new int[] { 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1 };
+                IceValues = new int[] { 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1 };
                 break;
         }
     }
@@ -71,17 +70,16 @@ public class RythmValues : MonoBehaviour
         switch (_buildingInfo.CurrentPoisonBuildingLevel)
         {
             case (0):
-                //PoisonValues = new int[] { 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0 };
-                PoisonValues = new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+                PoisonValues = new int[] { 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0 };
                 break;
             case (1):
-                PoisonValues = new int[] { 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0 };
+                PoisonValues = new int[] { 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0 };
                 break;
             case (2):
-                PoisonValues = new int[] { 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0 };
+                PoisonValues = new int[] { 0, 1, 1, 1, 1, 0, 1, 0, 0, 1, 1, 0 };
                 break;
             case (3):
-                PoisonValues = new int[] { 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1 };
+                PoisonValues = new int[] { 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1 };
                 break;
         }
     }
@@ -91,17 +89,16 @@ public class RythmValues : MonoBehaviour
         switch (_buildingInfo.CurrentEarthBuildingLevel)
         {
             case (0):
-                EarthValues = new int[] { 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0 };
-                //EarthValues = new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+                EarthValues = new int[] { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0 };
                 break;
             case (1):
-                EarthValues = new int[] { 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0 };
+                EarthValues = new int[] { 1, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0 };
                 break;
             case (2):
-                EarthValues = new int[] { 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0 };
+                EarthValues = new int[] { 1, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0 };
                 break;
             case (3):
-                EarthValues = new int[] { 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1 };
+                EarthValues = new int[] { 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 1, 1 };
                 break;
         }
     }

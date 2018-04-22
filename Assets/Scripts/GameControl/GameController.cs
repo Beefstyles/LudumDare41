@@ -7,8 +7,9 @@ public class GameController : MonoBehaviour {
     private int _numberOfEnemiesLeft;
     private int _currentRoundNumber;
 
-    private int _numberOfLivesLeft = 100;
-    private float _moneyLeft = 100000;
+    //private int _numberOfLivesLeft = 10;
+    private int _numberOfLivesLeft = 2;
+    private float _moneyLeft = 250;
     public bool GameOn;
     GameText _gameText;
     private int _currentSelectedBuildingCost;
@@ -17,11 +18,16 @@ public class GameController : MonoBehaviour {
     public int NumberOfFireTurrets = 0, NumberOfIceTurrets = 0, NumberOfPoisonTurrets = 0, NumberOfEarthTurrets = 0;
     public TurretController[] TurretControllers;
     LevelController _levelController;
+    EndOfGameControl _endOfGameControl;
 
     private void Start()
     {
         _gameText = GetComponent<GameText>();
         _levelController = FindObjectOfType<LevelController>();
+        _endOfGameControl = FindObjectOfType<EndOfGameControl>();
+        Time.timeScale = 1.0F;
+        _endOfGameControl.MainCamera.gameObject.SetActive(true);
+        _endOfGameControl.EndOfGameParts.SetActive(false);
     }
     public int NumberOfLivesLeft
     {
@@ -110,6 +116,7 @@ public class GameController : MonoBehaviour {
     {
         GameOn = false;
         yield return new WaitForSeconds(0.5F);
+        _endOfGameControl.DisplayEndOfGame();
     }
 
     public void UpdateListOfTurrets()
