@@ -11,11 +11,13 @@ public class BuildController : MonoBehaviour {
     public GameObject FireTurret, IceTurret, PoisonTurret, EarthTurret;
     private ProjectileTypes _selectedTurretType;
     private GameController _gameController;
+    private UpgradeController _upgradeController;
     private RythmValues _rhythmValues;
     private BuildingInfo _buildingInfo;
     public GameObject SelectedTurretSpawnLocation;
     public GameObject BuildBuildingButton;
     public Transform SelectedTurretSpawnLocationOffScreen;
+
 
     public LayerMask LayerMask;
     void Start()
@@ -23,6 +25,7 @@ public class BuildController : MonoBehaviour {
         _gameController = GetComponent<GameController>();
         _buildingInfo = GetComponent<BuildingInfo>();
         _rhythmValues = FindObjectOfType<RythmValues>();
+        _upgradeController = FindObjectOfType<UpgradeController>();
     }
 
     void Update()
@@ -36,7 +39,11 @@ public class BuildController : MonoBehaviour {
                 {
                     _hit.transform.gameObject.GetComponent<NextRoundControl>().CheckToStartNextRound();
                 }
-                    if (_hit.transform.tag == "TurrentSpawn")
+                if (_hit.transform.tag == "UpgradeButton")
+                {
+                    _hit.transform.gameObject.GetComponent<UpgradeController>().CheckIfUpgradePossible();
+                }
+                if (_hit.transform.tag == "TurrentSpawn")
                 {
                     CurrentTurretSpawnPoint = _hit.transform;
                     if (!_buildMenuUp)
@@ -55,15 +62,19 @@ public class BuildController : MonoBehaviour {
                     {
                         case (ProjectileTypes.Fire):
                             _gameController.CurrentSelectedBuildingCost = _buildingInfo.FireBuildingLevelsCosts[_buildingInfo.BuildingLevels["Fire"]];
+                            _upgradeController.SelectedElementText.text = "Fire";
                             break;
                         case (ProjectileTypes.Ice):
                             _gameController.CurrentSelectedBuildingCost = _buildingInfo.IceBuildingLevelsCosts[_buildingInfo.BuildingLevels["Ice"]];
+                            _upgradeController.SelectedElementText.text = "Ice";
                             break;
                         case (ProjectileTypes.Earth):
                             _gameController.CurrentSelectedBuildingCost = _buildingInfo.EarthBuildingLevelsCosts[_buildingInfo.BuildingLevels["Earth"]];
+                            _upgradeController.SelectedElementText.text = "Earth";
                             break;
                         case (ProjectileTypes.Poison):
                             _gameController.CurrentSelectedBuildingCost = _buildingInfo.PoisonBuildingLevelsCosts[_buildingInfo.BuildingLevels["Poison"]];
+                            _upgradeController.SelectedElementText.text = "Poison";
                             break;
                     }
                 }
