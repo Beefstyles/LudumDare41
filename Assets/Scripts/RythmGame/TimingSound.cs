@@ -57,6 +57,11 @@ public class TimingSound : MonoBehaviour {
         gameObject.GetComponent<MeshRenderer>().material = _noteMaterial;
     }
 
+    void Update()
+    {
+        CheckForErrenousNoteHits();
+    }
+
     void OnTriggerEnter(Collider coll)
     {
         if (coll.gameObject.tag == "SoundBar")
@@ -64,6 +69,8 @@ public class TimingSound : MonoBehaviour {
             _noteToBeHit = true;
         }
     }
+
+
     void OnTriggerStay(Collider coll)
     {
         if(coll.gameObject.tag == "SoundBar") 
@@ -109,7 +116,7 @@ public class TimingSound : MonoBehaviour {
     {
         if (!_noteToBeHit)
         {
-
+            _rythmSounds.MissedNoteHit.Play();
         }
     }
 

@@ -14,6 +14,7 @@ public class GameController : MonoBehaviour {
     private int _currentSelectedBuildingCost;
 
     public bool FireTurretsCanFire, IceTurretsCanFire, PoisonTurretsCanFire, EarthTurretsCanFire;
+    public int NumberOfFireTurrets = 0, NumberOfIceTurrets = 0, NumberOfPoisonTurrets = 0, NumberOfEarthTurrets = 0;
     public TurretController[] TurretControllers;
 
     private void Start()

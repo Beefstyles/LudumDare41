@@ -110,10 +110,10 @@ public class RythmValues : MonoBehaviour {
     IEnumerator DelaySettingOfNotes()
     {
         yield return new WaitForSeconds(0.5F);
-        SetFireNotes();
+        SetAllNotes();
     }
 
-    void SetFireNotes()
+    void SetAllNotes()
     {
         foreach (var rythymSection in _rhythmSections)
         {

@@ -20,6 +20,7 @@ public class BuildController : MonoBehaviour {
         _gameController = GetComponent<GameController>();
         _buildingInfo = GetComponent<BuildingInfo>();
     }
+
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -66,15 +67,19 @@ public class BuildController : MonoBehaviour {
                         {
                             case (ProjectileTypes.Fire):
                                 Instantiate(FireTurret, CurrentTurretSpawnPoint.position, Quaternion.identity);
+                                _gameController.NumberOfFireTurrets++;
                                 break;
                             case (ProjectileTypes.Ice):
                                 Instantiate(IceTurret, CurrentTurretSpawnPoint.position, Quaternion.identity);
+                                _gameController.NumberOfIceTurrets++;
                                 break;
                             case (ProjectileTypes.Earth):
                                 Instantiate(EarthTurret, CurrentTurretSpawnPoint.position, Quaternion.identity);
+                                _gameController.NumberOfEarthTurrets++;
                                 break;
                             case (ProjectileTypes.Poison):
                                 Instantiate(PoisonTurret, CurrentTurretSpawnPoint.position, Quaternion.identity);
+                                _gameController.NumberOfPoisonTurrets++;
                                 break;
                         }
                         _gameController.MoneyLeft -= _gameController.CurrentSelectedBuildingCost;
