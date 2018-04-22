@@ -10,6 +10,7 @@ public class BuildController : MonoBehaviour {
     private bool _buildMenuUp = false;
     public GameObject BuildMenu;
     public GameObject FireTurret, IceTurret, PoisonTurret, EarthTurret;
+    public GameObject TestGameObject;
     private ProjectileTypes _selectedTurretType;
     private GameController _gameController;
     private UpgradeController _upgradeController;
@@ -83,13 +84,17 @@ public class BuildController : MonoBehaviour {
                 }
                 if (_hit.transform.tag == "BuildButton")
                 {
-                    Vector3 proposedSpawnPoint = new Vector3(CurrentTurretSpawnPoint.position.x, CurrentTurretSpawnPoint.position.y, CurrentTurretSpawnPoint.position.z);
-                    Ray buildRay = Camera.main.ScreenPointToRay(proposedSpawnPoint);
-                    if (Physics.Raycast(buildRay, out _hit, 100.0F, LayerMask))
+                    Vector3 proposedSpawnPoint = new Vector3(CurrentTurretSpawnPoint.position.x, 10F, CurrentTurretSpawnPoint.position.z);
+                    Ray buildRay = new Ray(proposedSpawnPoint, Vector3.down);
+                    Debug.DrawLine(proposedSpawnPoint, Vector3.down);
+                    if (Physics.Raycast(buildRay, out _hitBuilding, 100.0F, LayerMask))
                     {
                             if (_hitBuilding.transform == null || _hitBuilding.transform.tag != "Building")
                             {
                                 if (_gameController.CurrentSelectedBuildingCost <= _gameController.MoneyLeft)
+                                {
+                                 GameObject TestGO = Instantiate(TestGameObject, CurrentTurretSpawnPoint.position, Quaternion.identity) as GameObject;
+                                if (!TestGO.GetComponent<TestGameObject>().IsInfringing)
                                 {
                                     switch (_selectedTurretType)
                                     {
@@ -115,6 +120,13 @@ public class BuildController : MonoBehaviour {
                                     _rhythmValues.SetAllNotes();
                                     CurrentTurretSpawnPoint = null;
                                     SelectedTurretSpawnLocation.transform.position = SelectedTurretSpawnLocationOffScreen.position;
+                                }
+
+                                else
+                                {
+                                    Debug.Log("Can't build here!!!");
+                                }
+                                    
                                 }
                                 else
                                 {

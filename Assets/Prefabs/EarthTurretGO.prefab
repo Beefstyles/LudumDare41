@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 114707604903369326}
   - component: {fileID: 65468878347823526}
   m_Layer: 0
-  m_Name: EarhTurretGO
+  m_Name: EarthTurretGO
   m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
