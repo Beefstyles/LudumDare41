@@ -42,6 +42,7 @@ public class EnemyHealth : MonoBehaviour {
     void HandleDeath()
     {
         _gameController.MoneyLeft += MoneyFromKill;
+        _gameController.NumberOfEnemiesLeft--;
         Debug.Log("Killed Enemy");
         Destroy(gameObject);
     }

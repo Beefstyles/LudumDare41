@@ -40,10 +40,11 @@ public class LevelController : MonoBehaviour {
 
     IEnumerator DelayEnemySpawn()
     {
-        for (int i = NumberOfEnemiesToSpawn; i >= 0; i--)
+        for (int i = NumberOfEnemiesToSpawn; i > 0; i--)
         {
             yield return new WaitForSeconds(TimeBetweenSpawn);
             Instantiate(Enemy, new Vector3(EnemySpawnPoint.position.x, 3F, EnemySpawnPoint.position.z), Quaternion.identity);
+            _gameController.NumberOfEnemiesLeft++;
         }
     }
 }

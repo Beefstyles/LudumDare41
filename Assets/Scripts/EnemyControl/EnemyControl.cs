@@ -25,6 +25,7 @@ public class EnemyControl : MonoBehaviour {
         {
             _step = Speed * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position, _currentTarget.position, _step);
+            transform.position = new Vector3(transform.position.x, 2F, transform.position.z);
             transform.LookAt(_currentTarget.position);
         }
 	}

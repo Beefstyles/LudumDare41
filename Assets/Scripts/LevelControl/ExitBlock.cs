@@ -18,7 +18,8 @@ public class ExitBlock : MonoBehaviour {
     {
         if (coll.gameObject.tag == "Enemy")
         {
-            _gameController.DecreaseLivesByOne();
+            _gameController.NumberOfLivesLeft--;
+            _gameController.NumberOfEnemiesLeft--;
             if (!_enemyExitEffectParticle.isPlaying)
             {
                 _enemyExitEffectParticle.Play();
