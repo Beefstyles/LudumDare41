@@ -6,7 +6,7 @@ using System;
 public class EnemyControl : MonoBehaviour {
 
     [SerializeField]
-    private int _currentWayPointTarget = 0;
+    private int _currentWayPointTarget = -1;
     private LevelController _levelController;
     private bool _haveTarget = false;
     private Transform _currentTarget;
