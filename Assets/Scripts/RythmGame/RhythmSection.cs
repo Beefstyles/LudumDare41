@@ -6,7 +6,7 @@ public class RhythmSection : MonoBehaviour {
 
     public int RhythmSectionNumber;
 
-    public GameObject FireNote, Note2, Note3, Note4;
+    public GameObject FireNote, IceNote, PoisionNote, EarthNote;
     private TimingSound[] _timingSounds;
 
     void Start()
@@ -21,13 +21,13 @@ public class RhythmSection : MonoBehaviour {
                     FireNote = timingSound.gameObject;
                     break;
                 case (NoteNumbers.Note2):
-                    Note2 = timingSound.gameObject;
+                    IceNote = timingSound.gameObject;
                     break;
                 case (NoteNumbers.Note3):
-                    Note3 = timingSound.gameObject;
+                    PoisionNote = timingSound.gameObject;
                     break;
                 case (NoteNumbers.Note4):
-                    Note4 = timingSound.gameObject;
+                    EarthNote = timingSound.gameObject;
                     break;
             }
         }

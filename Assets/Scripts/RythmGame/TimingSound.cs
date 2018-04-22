@@ -10,9 +10,15 @@ public class TimingSound : MonoBehaviour {
     private GameObject _noteSoundLoc;
     public Material Note1Mat, Note2Mat, Note3Mat, Note4Mat;
     private Material _noteMaterial;
+    private bool _noteToBeHit;
+    RythmSounds _rythmSounds;
+    GameController _gameController;
+    
 
     void Awake()
     {
+        _gameController = FindObjectOfType<GameController>();
+        _rythmSounds = FindObjectOfType<RythmSounds>();
         Note1 = gameObject.transform.Find("Note1").gameObject;
         Note2 = gameObject.transform.Find("Note2").gameObject;
         Note3 = gameObject.transform.Find("Note3").gameObject;
@@ -50,23 +56,98 @@ public class TimingSound : MonoBehaviour {
         sound = _noteSoundLoc.GetComponent<AudioSource>();
         gameObject.GetComponent<MeshRenderer>().material = _noteMaterial;
     }
+
     void OnTriggerEnter(Collider coll)
+    {
+        if (coll.gameObject.tag == "SoundBar")
+        {
+            _noteToBeHit = true;
+        }
+    }
+    void OnTriggerStay(Collider coll)
     {
         if(coll.gameObject.tag == "SoundBar") 
         {
-            //Debug.Log("Tick");
-            if (!sound.isPlaying)
+            switch (note)
             {
-                sound.Stop();
-                sound.Play();
+                case (NoteNumbers.Note1):
+                    if (Input.GetButton("Note1") && _noteToBeHit)
+                    {
+                        Debug.Log("Correct button");
+                        _noteToBeHit = false;
+                        _rythmSounds.CorrectNoteHit.Play();
+                        NotifyTurrets();
+                    }
+                    break;
+                case (NoteNumbers.Note2):
+
+                    break;
+                case (NoteNumbers.Note3):
+
+                    break;
+                case (NoteNumbers.Note4):
+
+                    break;
+                case (NoteNumbers.Beat):
+
+                    break;
+            }
+            if (!_noteToBeHit)
+            {
+                //Debug.Log("Tick");
+                if (!sound.isPlaying)
+                {
+                    sound.Stop();
+                    sound.Play();
+                }
+                _gameController.FireTurretsCanFire = false;
             }
          } 
+    }
+
+    void CheckForErrenousNoteHits()
+    {
+        if (!_noteToBeHit)
+        {
+
+        }
+    }
+
+    void NotifyTurrets()
+    {
+        foreach (var turret in _gameController.TurretControllers)
+        {
+            turret.SetIfCanFire(note);
+        }
     }
 
     void OnTriggerExit(Collider coll)
     {
         if (coll.gameObject.tag == "SoundBar")
         {
+            if (_noteToBeHit && !note.Equals(NoteNumbers.Beat))
+            {
+                Debug.Log("Missed note");
+                _rythmSounds.MissedNoteEntirely.Play();
+                _noteToBeHit = false;
+            }
+
+            switch (note)
+            {
+                case (NoteNumbers.Note1):
+                    _gameController.FireTurretsCanFire = false;
+                    break;
+                case (NoteNumbers.Note2):
+                    _gameController.IceTurretsCanFire = false;
+                    break;
+                case (NoteNumbers.Note3):
+                    _gameController.PoisonTurretsCanFire = false;
+                    break;
+                case (NoteNumbers.Note4):
+                    _gameController.EarthTurretsCanFire = false;
+                    break;
+            }
+
             //Debug.Log("Tock");
             if (sound.isPlaying)
             {

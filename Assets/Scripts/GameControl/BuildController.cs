@@ -78,6 +78,7 @@ public class BuildController : MonoBehaviour {
                                 break;
                         }
                         _gameController.MoneyLeft -= _gameController.CurrentSelectedBuildingCost;
+                        _gameController.UpdateListOfTurrets();
                     }
                     else
                     {

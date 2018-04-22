@@ -13,6 +13,9 @@ public class GameController : MonoBehaviour {
     GameText _gameText;
     private int _currentSelectedBuildingCost;
 
+    public bool FireTurretsCanFire, IceTurretsCanFire, PoisonTurretsCanFire, EarthTurretsCanFire;
+    public TurretController[] TurretControllers;
+
     private void Start()
     {
         _gameText = GetComponent<GameText>();
@@ -100,5 +103,10 @@ public class GameController : MonoBehaviour {
     {
         GameOn = false;
         yield return new WaitForSeconds(0.5F);
+    }
+
+    public void UpdateListOfTurrets()
+    {
+        TurretControllers = FindObjectsOfType<TurretController>();
     }
 }
