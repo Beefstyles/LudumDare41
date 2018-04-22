@@ -5,13 +5,15 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour {
 
     private Projectile _projectile;
-    public int Health;
+    public decimal Health;
     public int MoneyFromKill;
     private GameController _gameController;
+    private StreakCounter _streakCounter;
 
     private void Start()
     {
         _gameController = FindObjectOfType<GameController>();
+        _streakCounter = FindObjectOfType<StreakCounter>();
     }
 
     void OnTriggerEnter(Collider coll)
@@ -30,7 +32,7 @@ public class EnemyHealth : MonoBehaviour {
                 case (ProjectileTypes.Earth):
                     break;
             }
-            Health -= _projectile.Damage;
+            Health -= _projectile.Damage * _streakCounter.DamageMultiplierVal;
             Destroy(_projectile);
             if (Health <= 0)
             {

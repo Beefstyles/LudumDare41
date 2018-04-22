@@ -3029,6 +3029,18 @@ Transform:
   m_PrefabParentObject: {fileID: 4597299981585164, guid: 01c98169b12597849b04b9e4fd9b2e3d,
     type: 2}
   m_PrefabInternal: {fileID: 993445416}
+--- !u!114 &1003787098 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11400000, guid: a6a60659abb4d9d4b934feebd3dcc952,
+    type: 2}
+  m_PrefabInternal: {fileID: 1486156195}
+  m_Script: {fileID: -806885394, guid: 89f0137620f6af44b9ba852b4190e64e, type: 3}
+--- !u!114 &1012993147 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11400000, guid: a6a60659abb4d9d4b934feebd3dcc952,
+    type: 2}
+  m_PrefabInternal: {fileID: 1556401249}
+  m_Script: {fileID: -806885394, guid: 89f0137620f6af44b9ba852b4190e64e, type: 3}
 --- !u!1001 &1016975167
 Prefab:
   m_ObjectHideFlags: 0
@@ -4085,6 +4097,7 @@ GameObject:
   - component: {fileID: 1245987961}
   - component: {fileID: 1245987962}
   - component: {fileID: 1245987963}
+  - component: {fileID: 1245987964}
   m_Layer: 0
   m_Name: GameControllerObject
   m_TagString: Untagged
@@ -4183,6 +4196,19 @@ MonoBehaviour:
   CurrentIceBuildingLevel: 0
   CurrentPoisonBuildingLevel: 0
   CurrentEarthBuildingLevel: 0
+--- !u!114 &1245987964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1245987958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a06edbaf5cb7994bbcbef9cd4803278, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StreakCounterText: {fileID: 1003787098}
+  DamageMultiplierText: {fileID: 1012993147}
 --- !u!1 &1251955837
 GameObject:
   m_ObjectHideFlags: 0

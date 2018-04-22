@@ -13,12 +13,13 @@ public class TimingSound : MonoBehaviour {
     private bool _noteToBeHit;
     RythmSounds _rythmSounds;
     GameController _gameController;
-    
+    StreakCounter _streakCounter;
 
     void Awake()
     {
         _gameController = FindObjectOfType<GameController>();
         _rythmSounds = FindObjectOfType<RythmSounds>();
+        _streakCounter = FindObjectOfType<StreakCounter>();
         Note1 = gameObject.transform.Find("Note1").gameObject;
         Note2 = gameObject.transform.Find("Note2").gameObject;
         Note3 = gameObject.transform.Find("Note3").gameObject;
@@ -80,23 +81,28 @@ public class TimingSound : MonoBehaviour {
                 case (NoteNumbers.Note1):
                     if (Input.GetButton("Note1") && _noteToBeHit)
                     {
-                        Debug.Log("Correct button");
-                        _noteToBeHit = false;
-                        _rythmSounds.CorrectNoteHit.Play();
-                        NotifyTurrets();
+                        SuccesfulNoteHit();
                     }
                     break;
                 case (NoteNumbers.Note2):
-
+                    if (Input.GetButton("Note2") && _noteToBeHit)
+                    {
+                        SuccesfulNoteHit();
+                    }
                     break;
                 case (NoteNumbers.Note3):
-
+                    if (Input.GetButton("Note3") && _noteToBeHit)
+                    {
+                        SuccesfulNoteHit();
+                    }
                     break;
                 case (NoteNumbers.Note4):
-
+                    if (Input.GetButton("Note4") && _noteToBeHit)
+                    {
+                        SuccesfulNoteHit();
+                    }
                     break;
                 case (NoteNumbers.Beat):
-
                     break;
             }
             if (!_noteToBeHit)
@@ -107,9 +113,16 @@ public class TimingSound : MonoBehaviour {
                     sound.Stop();
                     sound.Play();
                 }
-                _gameController.FireTurretsCanFire = false;
             }
          } 
+    }
+
+    void SuccesfulNoteHit()
+    {
+        _noteToBeHit = false;
+        _rythmSounds.CorrectNoteHit.Play();
+        NotifyTurrets();
+        _streakCounter.StreakCounterVal++;
     }
 
     void CheckForErrenousNoteHits()
@@ -137,6 +150,8 @@ public class TimingSound : MonoBehaviour {
                 Debug.Log("Missed note");
                 _rythmSounds.MissedNoteEntirely.Play();
                 _noteToBeHit = false;
+                _streakCounter.StreakCounterVal = 0;
+                _streakCounter.DamageMultiplierVal = 0;
             }
 
             switch (note)
@@ -154,6 +169,7 @@ public class TimingSound : MonoBehaviour {
                     _gameController.EarthTurretsCanFire = false;
                     break;
             }
+            
 
             //Debug.Log("Tock");
             if (sound.isPlaying)
