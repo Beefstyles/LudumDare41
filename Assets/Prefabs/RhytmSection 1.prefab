@@ -121,7 +121,7 @@ GameObject:
   - component: {fileID: 114161063841990270}
   - component: {fileID: 82280642304006130}
   m_Layer: 0
-  m_Name: TimingNote
+  m_Name: Beat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -237,7 +237,7 @@ GameObject:
   - component: {fileID: 114432918824851250}
   - component: {fileID: 82918370126719786}
   m_Layer: 0
-  m_Name: TimingNote (4)
+  m_Name: EarthNote
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -369,7 +369,7 @@ GameObject:
   - component: {fileID: 114701790500946894}
   - component: {fileID: 82074072192788302}
   m_Layer: 0
-  m_Name: TimingNote (3)
+  m_Name: PoisionNote
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -472,7 +472,7 @@ GameObject:
   - component: {fileID: 114384344188435396}
   - component: {fileID: 82595482189203244}
   m_Layer: 0
-  m_Name: TimingNote (1)
+  m_Name: FireNote
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -508,7 +508,7 @@ GameObject:
   - component: {fileID: 114902903297151994}
   - component: {fileID: 82572278431914418}
   m_Layer: 0
-  m_Name: TimingNote (2)
+  m_Name: IceNote
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1422,7 +1422,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 8941bd6b39c98b449a044bf4534300eb, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 34a14d0f738e3474b9bf380ffb5d7457, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.65
   m_Pitch: 1
@@ -2542,7 +2542,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 8941bd6b39c98b449a044bf4534300eb, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 438386483e79dc64fae341759636bb81, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.65
   m_Pitch: 1
@@ -2622,7 +2622,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 8941bd6b39c98b449a044bf4534300eb, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 5503fe238cec7b541929f063dea1efe5, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.65
   m_Pitch: 1
@@ -3422,7 +3422,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 8941bd6b39c98b449a044bf4534300eb, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 7ae60801dd1f5e941bc5551bbe3b3d33, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.65
   m_Pitch: 1
@@ -3728,6 +3728,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RhythmSectionNumber: 0
+  FireNote: {fileID: 0}
+  IceNote: {fileID: 0}
+  PoisionNote: {fileID: 0}
+  EarthNote: {fileID: 0}
 --- !u!114 &114701790500946894
 MonoBehaviour:
   m_ObjectHideFlags: 1
