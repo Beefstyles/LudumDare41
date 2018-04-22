@@ -11,6 +11,7 @@ public class BuildController : MonoBehaviour {
     public GameObject FireTurret, IceTurret, PoisonTurret, EarthTurret;
     private ProjectileTypes _selectedTurretType;
     private GameController _gameController;
+    private RythmValues _rhythmValues;
     private BuildingInfo _buildingInfo;
     public GameObject SelectedTurretSpawnLocation;
     public GameObject BuildBuildingButton;
@@ -19,6 +20,7 @@ public class BuildController : MonoBehaviour {
     {
         _gameController = GetComponent<GameController>();
         _buildingInfo = GetComponent<BuildingInfo>();
+        _rhythmValues = FindObjectOfType<RythmValues>();
     }
 
     void Update()
@@ -84,6 +86,7 @@ public class BuildController : MonoBehaviour {
                         }
                         _gameController.MoneyLeft -= _gameController.CurrentSelectedBuildingCost;
                         _gameController.UpdateListOfTurrets();
+                        _rhythmValues.SetAllNotes();
                     }
                     else
                     {

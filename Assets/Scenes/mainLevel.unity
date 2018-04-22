@@ -3625,6 +3625,10 @@ MonoBehaviour:
   IceTurretsCanFire: 0
   PoisonTurretsCanFire: 0
   EarthTurretsCanFire: 0
+  NumberOfFireTurrets: 0
+  NumberOfIceTurrets: 0
+  NumberOfPoisonTurrets: 0
+  NumberOfEarthTurrets: 0
   TurretControllers: []
 --- !u!4 &1245987960
 Transform:
@@ -5112,7 +5116,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a864990d79a34ce4bac434e6c51ab2b5, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -5192,7 +5196,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 4471717a121aacd4ab0685d61b359bcd, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

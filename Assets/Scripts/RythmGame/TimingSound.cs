@@ -114,7 +114,7 @@ public class TimingSound : MonoBehaviour {
 
     void CheckForErrenousNoteHits()
     {
-        if (!_noteToBeHit)
+        if (!_noteToBeHit && (Input.GetButtonDown("Note1") || Input.GetButtonDown("Note2") || Input.GetButtonDown("Note3") || Input.GetButtonDown("Note4")))
         {
             _rythmSounds.MissedNoteHit.Play();
         }

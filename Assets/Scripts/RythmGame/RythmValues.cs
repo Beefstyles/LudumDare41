@@ -24,12 +24,6 @@ public class RythmValues : MonoBehaviour
         StartCoroutine("DelaySettingOfNotes");
     }
 
-    void Update()
-    {
-
-
-    }
-
     void UpdateFireNotes()
     {
         switch (_buildingInfo.CurrentFireBuildingLevel)
@@ -115,7 +109,7 @@ public class RythmValues : MonoBehaviour
         SetAllNotes();
     }
 
-    void SetAllNotes()
+    public void SetAllNotes()
     {
         foreach (var rythymSection in _rhythmSections)
         {
