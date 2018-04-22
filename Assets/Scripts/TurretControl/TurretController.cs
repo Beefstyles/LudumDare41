@@ -6,11 +6,12 @@ public class TurretController : MonoBehaviour
 {
     public GameObject Projectile;
     private bool _canFire = false;
-    private Transform _targetTransform;
+    public Transform TargetTransform;
     public float StrengthOfShot;
     public float ReloadSpeed;
     private ProjectileTypes _projectileType;
     GameController _gameController;
+    public bool HaveTarget = false;
 
 
     void Start()
@@ -18,17 +19,17 @@ public class TurretController : MonoBehaviour
         _gameController = FindObjectOfType<GameController>();
         _projectileType = Projectile.GetComponentInChildren<Projectile>().projectileType;
     }
-    void OnTriggerStay(Collider coll)
+
+    void Update()
     {
-        if (coll.gameObject.tag == "Enemy")
+        if (HaveTarget)
         {
-            _targetTransform = coll.gameObject.transform;
-            transform.LookAt(_targetTransform);
+            transform.LookAt(TargetTransform);
             if (_canFire)
             {
                 FireAtTarget();
-               _canFire = false;
-               // StartCoroutine("DelayFire");
+                _canFire = false;
+                // StartCoroutine("DelayFire");
             }
         }
     }
@@ -36,7 +37,7 @@ public class TurretController : MonoBehaviour
     private void FireAtTarget()
     {
         GameObject projectile = Instantiate(Projectile, transform.position, transform.rotation);
-        projectile.GetComponent<Rigidbody>().AddForce((_targetTransform.position - transform.position)* StrengthOfShot);
+        projectile.GetComponent<Rigidbody>().AddForce((TargetTransform.position - transform.position)* StrengthOfShot);
     }
 
     public void SetIfCanFire(NoteNumbers note)

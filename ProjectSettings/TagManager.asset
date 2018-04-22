@@ -13,6 +13,7 @@ TagManager:
   - Projectile
   - BuildButton
   - NextRoundButton
+  - AoA
   layers:
   - Default
   - TransparentFX

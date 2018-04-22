@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4597299981585164}
   - component: {fileID: 114707604903369326}
-  - component: {fileID: 136345636537429364}
   m_Layer: 0
   m_Name: FireTurretGO
   m_TagString: Untagged
@@ -38,7 +37,9 @@ GameObject:
   - component: {fileID: 4190292878816102}
   - component: {fileID: 33315030470073444}
   - component: {fileID: 23743369187311590}
-  m_Layer: 0
+  - component: {fileID: 136272381202866168}
+  - component: {fileID: 114609799075592690}
+  m_Layer: 2
   m_Name: AreaOfAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53,7 +54,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4789610784368946}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: FireTurret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68,7 +69,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4835262136912686}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85,7 +86,7 @@ GameObject:
   - component: {fileID: 4170151141254996}
   - component: {fileID: 33259213426401372}
   - component: {fileID: 23604230414476874}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,7 +126,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1520166634188642}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.09, y: 1.4, z: 13.47}
+  m_LocalPosition: {x: -14.900806, y: 1, z: -0.62352705}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4835262136912686}
@@ -243,6 +244,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1678511986134492}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114609799075592690
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1678511986134492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 691857bd20f60fb46a4933876698ba95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114707604903369326
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -255,18 +267,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Projectile: {fileID: 1520166634188642, guid: 27bedec0472aace48b10f10f7eddb959, type: 2}
+  TargetTransform: {fileID: 0}
   StrengthOfShot: 100
   ReloadSpeed: 0.5
---- !u!136 &136345636537429364
+  HaveTarget: 0
+--- !u!136 &136272381202866168
 CapsuleCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1520166634188642}
+  m_GameObject: {fileID: 1678511986134492}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 5.6085525
-  m_Height: 11.716562
+  m_Radius: 0.5000001
+  m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0.034086704, y: 0, z: -0.02837658}
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}

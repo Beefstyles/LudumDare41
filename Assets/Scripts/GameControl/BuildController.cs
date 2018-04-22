@@ -15,7 +15,9 @@ public class BuildController : MonoBehaviour {
     private BuildingInfo _buildingInfo;
     public GameObject SelectedTurretSpawnLocation;
     public GameObject BuildBuildingButton;
+    public Transform SelectedTurretSpawnLocationOffScreen;
 
+    public LayerMask LayerMask;
     void Start()
     {
         _gameController = GetComponent<GameController>();
@@ -28,8 +30,9 @@ public class BuildController : MonoBehaviour {
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out _hit, 100.0F))
+            if (Physics.Raycast(ray, out _hit, 100.0F, LayerMask))
             {
+                Debug.Log(_hit.transform.tag);
                 if (_hit.transform.tag == "NextRoundButton")
                 {
                     _hit.transform.gameObject.GetComponent<NextRoundControl>().CheckToStartNextRound();
@@ -91,6 +94,8 @@ public class BuildController : MonoBehaviour {
                         _gameController.MoneyLeft -= _gameController.CurrentSelectedBuildingCost;
                         _gameController.UpdateListOfTurrets();
                         _rhythmValues.SetAllNotes();
+                        CurrentTurretSpawnPoint = null;
+                        SelectedTurretSpawnLocation.transform.position = SelectedTurretSpawnLocationOffScreen.position;
                     }
                     else
                     {

@@ -40,6 +40,6 @@ public class GameText : MonoBehaviour {
     }
     public void CurrentBuildingCostTextUpdate(int value)
     {
-        CurrentBuildingCostText.text = value.ToString();
+        CurrentBuildingCostText.text = string.Format("Cost: {0}", value);
     }
 }
