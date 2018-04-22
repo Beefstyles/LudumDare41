@@ -13,6 +13,7 @@ public class BuildController : MonoBehaviour {
     private GameController _gameController;
     private BuildingInfo _buildingInfo;
     public GameObject SelectedTurretSpawnLocation;
+    public GameObject BuildBuildingButton;
 
     void Start()
     {
@@ -34,7 +35,6 @@ public class BuildController : MonoBehaviour {
                         _buildMenuUp = true;
                     }
                     ToggleBuildMenu(_buildMenuUp);
-                    Debug.Log("Can spawn here");
                     SelectedTurretSpawnLocation.transform.position = _hit.transform.position;
                 }
                 if (_hit.transform.tag == "BuildingSpawn")
@@ -93,7 +93,8 @@ public class BuildController : MonoBehaviour {
                 }
 
             }
-        }
+        ConfirmBuildButtonActive();
+     }
 
     void ToggleBuildMenu(bool enable)
     {
@@ -112,5 +113,23 @@ public class BuildController : MonoBehaviour {
             }
         }
         
+    }
+
+    void ConfirmBuildButtonActive()
+    {
+        if(CurrentTurretSpawnPoint == null)
+        {
+            if (BuildBuildingButton.activeSelf)
+            {
+                BuildBuildingButton.SetActive(false);
+            }
+        }
+        else
+        {
+            if (!BuildBuildingButton.activeSelf)
+            {
+                BuildBuildingButton.SetActive(true);
+            }
+        }
     }
 }

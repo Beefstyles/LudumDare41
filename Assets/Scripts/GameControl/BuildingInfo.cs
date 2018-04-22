@@ -10,6 +10,9 @@ public class BuildingInfo : MonoBehaviour {
     public Dictionary<int, int> PoisonBuildingLevelsCosts;
     public Dictionary<int, int> EarthBuildingLevelsCosts;
     public int CurrentFireBuildingLevel;
+    public int CurrentIceBuildingLevel;
+    public int CurrentPoisonBuildingLevel;
+    public int CurrentEarthBuildingLevel;
 
     void Start()
     {
@@ -52,6 +55,18 @@ public class BuildingInfo : MonoBehaviour {
         {
             CurrentFireBuildingLevel = temp;
         }
-        
+        if (BuildingLevels.TryGetValue("Ice", out temp))
+        {
+            CurrentIceBuildingLevel = temp;
+        }
+        if (BuildingLevels.TryGetValue("Poison", out temp))
+        {
+            CurrentPoisonBuildingLevel = temp;
+        }
+        if (BuildingLevels.TryGetValue("Earth", out temp))
+        {
+            CurrentEarthBuildingLevel = temp;
+        }
+
     }
 }
