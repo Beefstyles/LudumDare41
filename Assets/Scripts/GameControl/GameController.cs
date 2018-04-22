@@ -16,10 +16,12 @@ public class GameController : MonoBehaviour {
     public bool FireTurretsCanFire, IceTurretsCanFire, PoisonTurretsCanFire, EarthTurretsCanFire;
     public int NumberOfFireTurrets = 0, NumberOfIceTurrets = 0, NumberOfPoisonTurrets = 0, NumberOfEarthTurrets = 0;
     public TurretController[] TurretControllers;
+    LevelController _levelController;
 
     private void Start()
     {
         _gameText = GetComponent<GameText>();
+        _levelController = FindObjectOfType<LevelController>();
     }
     public int NumberOfLivesLeft
     {
@@ -50,6 +52,10 @@ public class GameController : MonoBehaviour {
         {
             _numberOfEnemiesLeft = value;
             _gameText.EnemiesLeftTextUpdate();
+            if(_numberOfEnemiesLeft <= 0)
+            {
+                _levelController.EndRound();
+            }
         }
     }
 

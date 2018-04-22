@@ -15,6 +15,7 @@ public class LevelController : MonoBehaviour {
 
     void Start()
     {
+        EnemySpawnPoint = FindObjectOfType<StartBlock>().transform;
         Waypoints = FindObjectsOfType<WaypointNumber>();
         _gameController = FindObjectOfType<GameController>();
         _buildController = FindObjectOfType<BuildController>();
@@ -30,7 +31,6 @@ public class LevelController : MonoBehaviour {
         BuildMode = false;
         _buildController.BuildMenu.SetActive(false);
         StartCoroutine("DelayEnemySpawn");
-        
     }
 
     public void EndRound()
@@ -46,6 +46,5 @@ public class LevelController : MonoBehaviour {
             yield return new WaitForSeconds(TimeBetweenSpawn);
             Instantiate(Enemy, EnemySpawnPoint.position, Quaternion.identity);
         }
-        EndRound();
     }
 }

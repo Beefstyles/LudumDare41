@@ -30,7 +30,11 @@ public class BuildController : MonoBehaviour {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out _hit, 100.0F))
             {
-                if (_hit.transform.tag == "TurrentSpawn")
+                if (_hit.transform.tag == "NextRoundButton")
+                {
+                    _hit.transform.gameObject.GetComponent<NextRoundControl>().CheckToStartNextRound();
+                }
+                    if (_hit.transform.tag == "TurrentSpawn")
                 {
                     CurrentTurretSpawnPoint = _hit.transform;
                     if (!_buildMenuUp)
