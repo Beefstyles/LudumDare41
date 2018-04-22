@@ -32,7 +32,7 @@ public class RythmValues : MonoBehaviour
         switch (_buildingInfo.CurrentFireBuildingLevel)
         {
             case (0):
-                FireValues = new int[] { 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0 };
+                FireValues = new int[] { 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0 };
                 break;
             case (1):
                 FireValues = new int[] { 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0 };

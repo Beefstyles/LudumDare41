@@ -16,6 +16,7 @@ TagManager:
   - AoA
   - New tag
   - UpgradeButton
+  - Building
   layers:
   - Default
   - TransparentFX

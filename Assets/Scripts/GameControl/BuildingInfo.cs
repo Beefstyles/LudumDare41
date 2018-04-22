@@ -9,6 +9,13 @@ public class BuildingInfo : MonoBehaviour {
     public Dictionary<int, int> IceBuildingLevelsCosts;
     public Dictionary<int, int> PoisonBuildingLevelsCosts;
     public Dictionary<int, int> EarthBuildingLevelsCosts;
+
+    public Dictionary<int, int> FireBuildingUpgradeCosts;
+    public Dictionary<int, int> IceBuildingUpgradeCosts;
+    public Dictionary<int, int> PoisonBuildingUpgradeCosts;
+    public Dictionary<int, int> EarthBuildingUpgradeCosts;
+
+
     public int CurrentFireBuildingLevel;
     public int CurrentIceBuildingLevel;
     public int CurrentPoisonBuildingLevel;
@@ -46,6 +53,25 @@ public class BuildingInfo : MonoBehaviour {
         EarthBuildingLevelsCosts.Add(2, 400);
         EarthBuildingLevelsCosts.Add(3, 500);
 
+        FireBuildingUpgradeCosts = new Dictionary<int, int>();
+        FireBuildingUpgradeCosts.Add(0, 500);
+        FireBuildingUpgradeCosts.Add(1, 750);
+        FireBuildingUpgradeCosts.Add(2, 1000);
+
+        IceBuildingUpgradeCosts = new Dictionary<int, int>();
+        IceBuildingUpgradeCosts.Add(0, 250);
+        IceBuildingUpgradeCosts.Add(1, 500);
+        IceBuildingUpgradeCosts.Add(2, 800);
+
+        PoisonBuildingUpgradeCosts = new Dictionary<int, int>();
+        PoisonBuildingUpgradeCosts.Add(0, 225);
+        PoisonBuildingUpgradeCosts.Add(1, 400);
+        PoisonBuildingUpgradeCosts.Add(2, 700);
+
+        EarthBuildingUpgradeCosts = new Dictionary<int, int>();
+        EarthBuildingUpgradeCosts.Add(0, 600);
+        EarthBuildingUpgradeCosts.Add(1, 1200);
+        EarthBuildingUpgradeCosts.Add(2, 1800);
     }
 
     void Update()

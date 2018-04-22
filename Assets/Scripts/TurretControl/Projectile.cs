@@ -6,5 +6,6 @@ public class Projectile : MonoBehaviour {
 
     public ProjectileTypes projectileType;
     public int Damage;
-
+    public int FreezeTime;
+    public int PoisonAmount;
 }

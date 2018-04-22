@@ -5,6 +5,7 @@ using UnityEngine;
 public class BuildController : MonoBehaviour {
 
     private RaycastHit _hit;
+    private RaycastHit _hitBuilding;
     public Transform CurrentTurretSpawnPoint;
     private bool _buildMenuUp = false;
     public GameObject BuildMenu;
@@ -63,6 +64,7 @@ public class BuildController : MonoBehaviour {
                         case (ProjectileTypes.Fire):
                             _gameController.CurrentSelectedBuildingCost = _buildingInfo.FireBuildingLevelsCosts[_buildingInfo.BuildingLevels["Fire"]];
                             _upgradeController.SelectedElementText.text = "Fire";
+                            
                             break;
                         case (ProjectileTypes.Ice):
                             _gameController.CurrentSelectedBuildingCost = _buildingInfo.IceBuildingLevelsCosts[_buildingInfo.BuildingLevels["Ice"]];
@@ -77,40 +79,53 @@ public class BuildController : MonoBehaviour {
                             _upgradeController.SelectedElementText.text = "Poison";
                             break;
                     }
+                    _upgradeController.UpdateUpgradeText();
                 }
                 if (_hit.transform.tag == "BuildButton")
                 {
-                    if (_gameController.CurrentSelectedBuildingCost <= _gameController.MoneyLeft)
+                    Vector3 proposedSpawnPoint = new Vector3(CurrentTurretSpawnPoint.position.x, CurrentTurretSpawnPoint.position.y, CurrentTurretSpawnPoint.position.z);
+                    Ray buildRay = Camera.main.ScreenPointToRay(proposedSpawnPoint);
+                    if (Physics.Raycast(buildRay, out _hit, 100.0F, LayerMask))
                     {
-                        switch (_selectedTurretType)
-                        {
-                            case (ProjectileTypes.Fire):
-                                Instantiate(FireTurret, CurrentTurretSpawnPoint.position, Quaternion.identity);
-                                _gameController.NumberOfFireTurrets++;
-                                break;
-                            case (ProjectileTypes.Ice):
-                                Instantiate(IceTurret, CurrentTurretSpawnPoint.position, Quaternion.identity);
-                                _gameController.NumberOfIceTurrets++;
-                                break;
-                            case (ProjectileTypes.Earth):
-                                Instantiate(EarthTurret, CurrentTurretSpawnPoint.position, Quaternion.identity);
-                                _gameController.NumberOfEarthTurrets++;
-                                break;
-                            case (ProjectileTypes.Poison):
-                                Instantiate(PoisonTurret, CurrentTurretSpawnPoint.position, Quaternion.identity);
-                                _gameController.NumberOfPoisonTurrets++;
-                                break;
-                        }
-                        _gameController.MoneyLeft -= _gameController.CurrentSelectedBuildingCost;
-                        _gameController.UpdateListOfTurrets();
-                        _rhythmValues.SetAllNotes();
-                        CurrentTurretSpawnPoint = null;
-                        SelectedTurretSpawnLocation.transform.position = SelectedTurretSpawnLocationOffScreen.position;
-                    }
-                    else
-                    {
+                            if (_hitBuilding.transform == null || _hitBuilding.transform.tag != "Building")
+                            {
+                                if (_gameController.CurrentSelectedBuildingCost <= _gameController.MoneyLeft)
+                                {
+                                    switch (_selectedTurretType)
+                                    {
+                                        case (ProjectileTypes.Fire):
+                                            Instantiate(FireTurret, CurrentTurretSpawnPoint.position, Quaternion.identity);
+                                            _gameController.NumberOfFireTurrets++;
+                                            break;
+                                        case (ProjectileTypes.Ice):
+                                            Instantiate(IceTurret, CurrentTurretSpawnPoint.position, Quaternion.identity);
+                                            _gameController.NumberOfIceTurrets++;
+                                            break;
+                                        case (ProjectileTypes.Earth):
+                                            Instantiate(EarthTurret, CurrentTurretSpawnPoint.position, Quaternion.identity);
+                                            _gameController.NumberOfEarthTurrets++;
+                                            break;
+                                        case (ProjectileTypes.Poison):
+                                            Instantiate(PoisonTurret, CurrentTurretSpawnPoint.position, Quaternion.identity);
+                                            _gameController.NumberOfPoisonTurrets++;
+                                            break;
+                                    }
+                                    _gameController.MoneyLeft -= _gameController.CurrentSelectedBuildingCost;
+                                    _gameController.UpdateListOfTurrets();
+                                    _rhythmValues.SetAllNotes();
+                                    CurrentTurretSpawnPoint = null;
+                                    SelectedTurretSpawnLocation.transform.position = SelectedTurretSpawnLocationOffScreen.position;
+                                }
+                                else
+                                {
 
-                    }
+                                }
+                            }
+                        else
+                        {
+                            Debug.Log(_hitBuilding.transform.name);
+                        }
+                    } 
                 }
                 else
                 {

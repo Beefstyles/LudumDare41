@@ -20,9 +20,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4597299981585164}
   - component: {fileID: 114707604903369326}
+  - component: {fileID: 65468878347823526}
   m_Layer: 0
   m_Name: EarhTurretGO
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37,7 +38,7 @@ GameObject:
   - component: {fileID: 4805221934150670}
   - component: {fileID: 33142790065969944}
   - component: {fileID: 23902068294195814}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,7 +87,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4166532610778200}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: EarthTurret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127,7 +128,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1520166634188642}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.525244, y: 16.497568, z: -60.918648}
+  m_LocalPosition: {x: -3.1032374, y: 2, z: 8.165049}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4835262136912686}
@@ -244,6 +245,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1678511986134492}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &65468878347823526
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1520166634188642}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1.1841526}
+  m_Center: {x: 0, y: 0, z: -0.044911385}
 --- !u!114 &114609799075592690
 MonoBehaviour:
   m_ObjectHideFlags: 1
