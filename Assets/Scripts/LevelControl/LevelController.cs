@@ -12,6 +12,7 @@ public class LevelController : MonoBehaviour {
     public int NumberOfEnemiesToSpawn = 5;
     public float TimeBetweenSpawn = 1F;
     public Transform EnemySpawnPoint;
+    SoundBarMovement _soundBarMovement;
 
     void Start()
     {
@@ -19,11 +20,7 @@ public class LevelController : MonoBehaviour {
         Waypoints = FindObjectsOfType<WaypointNumber>();
         _gameController = FindObjectOfType<GameController>();
         _buildController = FindObjectOfType<BuildController>();
-    }
-
-    void Update()
-    {
-
+        _soundBarMovement = FindObjectOfType<SoundBarMovement>();
     }
 
     public void StartNextRound()
@@ -37,6 +34,8 @@ public class LevelController : MonoBehaviour {
     {
         _buildController.BuildMenu.SetActive(true);
         _gameController.CurrentRoundNumber++;
+        BuildMode = true;
+        _soundBarMovement.ResetSongBar();
     }
 
     IEnumerator DelayEnemySpawn()
@@ -44,7 +43,7 @@ public class LevelController : MonoBehaviour {
         for (int i = NumberOfEnemiesToSpawn; i >= 0; i--)
         {
             yield return new WaitForSeconds(TimeBetweenSpawn);
-            Instantiate(Enemy, EnemySpawnPoint.position, Quaternion.identity);
+            Instantiate(Enemy, new Vector3(EnemySpawnPoint.position.x, 3F, EnemySpawnPoint.position.z), Quaternion.identity);
         }
     }
 }

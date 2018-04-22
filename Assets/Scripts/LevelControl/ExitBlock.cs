@@ -27,6 +27,7 @@ public class ExitBlock : MonoBehaviour {
             {
                 _enemyExitedSound.Play();
             }
+            Destroy(coll.gameObject);
         }
     }
 

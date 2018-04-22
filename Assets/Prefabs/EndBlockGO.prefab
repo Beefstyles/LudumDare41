@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 198155854955966316}
   - component: {fileID: 199699079590274282}
   - component: {fileID: 82625706062039364}
+  - component: {fileID: 65565167112829086}
   m_Layer: 0
   m_Name: EndBlockGO
   m_TagString: Untagged
@@ -174,6 +175,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1861526332735308}
   m_Mesh: {fileID: 4300000, guid: 844d6f420b271e94d8f6d37d2d16dc4a, type: 3}
+--- !u!65 &65565167112829086
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1520166634188642}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.15, y: 1.38, z: 1.19}
+  m_Center: {x: 0, y: -0.11316919, z: 0.25000024}
 --- !u!82 &82625706062039364
 AudioSource:
   m_ObjectHideFlags: 1
@@ -184,7 +197,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 4dfddc695babccb409e076e0cc64431d, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.75
   m_Pitch: 1
   Loop: 0
@@ -337,7 +350,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1786892992
+  randomSeed: -121194214
   InitialModule:
     serializedVersion: 3
     enabled: 1

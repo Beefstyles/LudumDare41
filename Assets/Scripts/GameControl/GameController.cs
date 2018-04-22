@@ -7,7 +7,7 @@ public class GameController : MonoBehaviour {
     private int _numberOfEnemiesLeft;
     private int _currentRoundNumber;
 
-    private int _numberOfLivesLeft;
+    private int _numberOfLivesLeft = 100;
     private float _moneyLeft = 100000;
     public bool GameOn;
     GameText _gameText;

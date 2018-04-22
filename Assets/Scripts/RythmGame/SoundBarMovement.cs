@@ -12,18 +12,33 @@ public class SoundBarMovement : MonoBehaviour {
     [Range(0.0F, 10.0F)]
     public float SpeedOfMovement;
 
+    LevelController _levelController;
+
     public Transform StartPoint;
 
+    void Start()
+    {
+        _levelController = FindObjectOfType<LevelController>();
+        ResetSongBar();
+    }
 	void Update ()
     {
-        transform.Translate(new Vector3(1F, 0F, 0F) * SpeedOfMovement);
+        if (!_levelController.BuildMode)
+        {
+            transform.Translate(new Vector3(1F, 0F, 0F) * SpeedOfMovement);
+        }
 	}
 
     void OnTriggerEnter(Collider coll)
     {
         if(coll.gameObject.tag == "ResetPoint")
         {
-            transform.position = StartPoint.position;
+            ResetSongBar();
         }
+    }
+
+    public void ResetSongBar()
+    {
+        transform.position = StartPoint.position;
     }
 }
