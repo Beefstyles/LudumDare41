@@ -34,6 +34,8 @@ public class LevelController : MonoBehaviour {
     {
         BuildMode = false;
         _buildController.BuildMenu.SetActive(false);
+        //_gameController.NumberOfEnemiesLeft = NumberOfEnemiesToSpawn;
+        NumberOfEnemiesToSpawn = Mathf.FloorToInt(NumberOfEnemiesToSpawn + EnemiesToSpawnMultiplication);
         StartCoroutine("DelayEnemySpawn");
         AllEnemiesSpawned = false;
     }
@@ -50,12 +52,12 @@ public class LevelController : MonoBehaviour {
 
     IEnumerator DelayEnemySpawn()
     {
-        _gameController.NumberOfEnemiesLeft = NumberOfEnemiesToSpawn;
+
         for (int i = Mathf.FloorToInt(NumberOfEnemiesToSpawn); i > 0; i--)
         {
             yield return new WaitForSeconds(TimeBetweenSpawn);
             Instantiate(Enemy, new Vector3(EnemySpawnPoint.position.x, 3F, EnemySpawnPoint.position.z), Quaternion.identity);
-            //_gameController.NumberOfEnemiesLeft++;
+            _gameController.NumberOfEnemiesLeft++;
         }
         AllEnemiesSpawned = true;
     }

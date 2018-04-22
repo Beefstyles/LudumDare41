@@ -10,13 +10,14 @@ public class EnemyHealth : MonoBehaviour {
     private GameController _gameController;
     private StreakCounter _streakCounter;
     private LevelController _levelController;
+    private bool isAlive;
 
     private void Start()
     {
         _gameController = FindObjectOfType<GameController>();
         _streakCounter = FindObjectOfType<StreakCounter>();
         _levelController = FindObjectOfType<LevelController>();
-
+        isAlive = true;
         Health += _levelController.HealthOfEnemiesMultiplication;
     }
 
@@ -42,8 +43,9 @@ public class EnemyHealth : MonoBehaviour {
                 Health -= _projectile.Damage * (float)_streakCounter.DamageMultiplierVal;
                 Destroy(_projectile);
             }
-            if (Health <= 0)
+            if (Health <= 0 && isAlive)
             {
+                isAlive = false;
                 HandleDeath();
             }
         }

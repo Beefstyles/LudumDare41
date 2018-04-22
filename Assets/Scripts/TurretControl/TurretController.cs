@@ -37,7 +37,7 @@ public class TurretController : MonoBehaviour
     private void FireAtTarget()
     {
         GameObject projectile = Instantiate(Projectile, transform.position, transform.rotation);
-        if(projectile != null && TargetTransform.position != null)
+        if(projectile != null || TargetTransform.position != null)
         {
             projectile.GetComponent<Rigidbody>().AddForce((TargetTransform.position - transform.position) * StrengthOfShot);
         }
