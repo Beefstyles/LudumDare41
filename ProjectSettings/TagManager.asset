@@ -12,6 +12,7 @@ TagManager:
   - BuildingSpawn
   - Projectile
   - BuildButton
+  - NextRoundButton
   layers:
   - Default
   - TransparentFX

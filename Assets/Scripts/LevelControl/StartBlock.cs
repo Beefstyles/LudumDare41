@@ -16,7 +16,7 @@ public class StartBlock : MonoBehaviour {
     IEnumerator DelayLookAt()
     {
         yield return new WaitForSeconds(0.5F);
-        foreach (var waypoint in _levelController.waypoints)
+        foreach (var waypoint in _levelController.Waypoints)
         {
             if (waypoint.WayPointNumber == 1)
             {

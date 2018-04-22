@@ -32,7 +32,7 @@ public class EnemyControl : MonoBehaviour {
     IEnumerator DelayMovement()
     {
         yield return new WaitForSeconds(0.1F);
-        foreach (var waypoint in _levelController.waypoints)
+        foreach (var waypoint in _levelController.Waypoints)
         {
             if (waypoint.WayPointNumber == _currentWayPointTarget)
             {
