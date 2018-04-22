@@ -21,6 +21,9 @@ public class RythmValues : MonoBehaviour
         _buildingInfo = FindObjectOfType<BuildingInfo>();
         _rhythmSections = GetComponentsInChildren<RhythmSection>();
         UpdateFireNotes();
+        UpdateIceNotes();
+        UpdatePoisonNotes();
+        UpdateEarthNotes();
         StartCoroutine("DelaySettingOfNotes");
     }
 
@@ -88,8 +91,8 @@ public class RythmValues : MonoBehaviour
         switch (_buildingInfo.CurrentEarthBuildingLevel)
         {
             case (0):
-                //EarthValues = new int[] { 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0 };
-                EarthValues = new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+                EarthValues = new int[] { 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0 };
+                //EarthValues = new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
                 break;
             case (1):
                 EarthValues = new int[] { 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0 };
