@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RythmValues : MonoBehaviour {
+public class RythmValues : MonoBehaviour
+{
 
     public int[] FireValues = new int[12];
     public int[] IceValues = new int[12];
@@ -10,21 +11,22 @@ public class RythmValues : MonoBehaviour {
     public int[] EarthValues = new int[12];
 
     RhythmSection[] _rhythmSections;
-
+    GameController _gameController;
 
     BuildingInfo _buildingInfo;
 
-	void Start ()
+    void Start()
     {
+        _gameController = FindObjectOfType<GameController>();
         _buildingInfo = FindObjectOfType<BuildingInfo>();
         _rhythmSections = GetComponentsInChildren<RhythmSection>();
         UpdateFireNotes();
         StartCoroutine("DelaySettingOfNotes");
     }
-	
-	void Update ()
+
+    void Update()
     {
-        
+
 
     }
 
@@ -33,7 +35,7 @@ public class RythmValues : MonoBehaviour {
         switch (_buildingInfo.CurrentFireBuildingLevel)
         {
             case (0):
-                FireValues = new int [] { 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0};
+                FireValues = new int[] { 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0 };
                 break;
             case (1):
                 FireValues = new int[] { 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0 };
@@ -121,64 +123,95 @@ public class RythmValues : MonoBehaviour {
             {
                 if (rythymSection.RhythmSectionNumber == i)
                 {
-                    if(FireValues[i] == 0)
+                    if (_gameController.NumberOfFireTurrets > 0)
                     {
-                        if (rythymSection.FireNote.activeSelf)
+                        if (FireValues[i] == 0)
                         {
-                            rythymSection.FireNote.SetActive(false);
+                            if (rythymSection.FireNote.activeSelf)
+                            {
+                                rythymSection.FireNote.SetActive(false);
+                            }
+                        }
+                        else
+                        {
+                            if (!rythymSection.FireNote.activeSelf)
+                            {
+                                rythymSection.FireNote.SetActive(true);
+                            }
                         }
                     }
                     else
                     {
-                        if (!rythymSection.FireNote.activeSelf)
-                        {
-                            rythymSection.FireNote.SetActive(true);
-                        }
+                        rythymSection.FireNote.SetActive(false);
                     }
-                    if (IceValues[i] == 0)
+
+                    if (_gameController.NumberOfIceTurrets > 0)
                     {
-                        if (rythymSection.IceNote.activeSelf)
+                        if (IceValues[i] == 0)
                         {
-                            rythymSection.IceNote.SetActive(false);
+                            if (rythymSection.IceNote.activeSelf)
+                            {
+                                rythymSection.IceNote.SetActive(false);
+                            }
                         }
-                    }
-                    else
-                    {
-                        if (!rythymSection.IceNote.activeSelf)
+                        else
                         {
-                            rythymSection.IceNote.SetActive(true);
-                        }
-                    }
-                    if (PoisonValues[i] == 0)
-                    {
-                        if (rythymSection.PoisionNote.activeSelf)
-                        {
-                            rythymSection.PoisionNote.SetActive(false);
+                            if (!rythymSection.IceNote.activeSelf)
+                            {
+                                rythymSection.IceNote.SetActive(true);
+                            }
                         }
                     }
                     else
                     {
-                        if (!rythymSection.PoisionNote.activeSelf)
-                        {
-                            rythymSection.PoisionNote.SetActive(true);
-                        }
+                        rythymSection.IceNote.SetActive(false);
                     }
-                    if (EarthValues[i] == 0)
+                    if (_gameController.NumberOfPoisonTurrets > 0)
                     {
-                        if (rythymSection.EarthNote.activeSelf)
+                        if (PoisonValues[i] == 0)
                         {
-                            rythymSection.EarthNote.SetActive(false);
+                            if (rythymSection.PoisionNote.activeSelf)
+                            {
+                                rythymSection.PoisionNote.SetActive(false);
+                            }
+                        }
+
+                        else
+                        {
+                            if (!rythymSection.PoisionNote.activeSelf)
+                            {
+                                rythymSection.PoisionNote.SetActive(true);
+                            }
                         }
                     }
                     else
                     {
-                        if (!rythymSection.EarthNote.activeSelf)
+                        rythymSection.PoisionNote.SetActive(false);
+                    }
+                    if (_gameController.NumberOfEarthTurrets > 0)
+                    {
+                        if (EarthValues[i] == 0)
                         {
-                            rythymSection.EarthNote.SetActive(true);
+                            if (rythymSection.EarthNote.activeSelf)
+                            {
+                                rythymSection.EarthNote.SetActive(false);
+                            }
                         }
+                        else
+                        {
+                            if (!rythymSection.EarthNote.activeSelf)
+                            {
+                                rythymSection.EarthNote.SetActive(true);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        rythymSection.EarthNote.SetActive(false);
                     }
                 }
             }
         }
+
     }
 }
