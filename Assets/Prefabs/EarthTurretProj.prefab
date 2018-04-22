@@ -201,7 +201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileType: 3
-  Damage: 10
+  Damage: 15
   FreezeTime: 0
   PoisonAmount: 0
 --- !u!135 &135542326450210806

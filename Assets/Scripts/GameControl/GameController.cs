@@ -7,9 +7,8 @@ public class GameController : MonoBehaviour {
     private int _numberOfEnemiesLeft;
     private int _currentRoundNumber;
 
-    //private int _numberOfLivesLeft = 10;
-    private int _numberOfLivesLeft = 2;
-    private float _moneyLeft = 250;
+    private int _numberOfLivesLeft = 25;
+    private float _moneyLeft = 200;
     public bool GameOn;
     GameText _gameText;
     private int _currentSelectedBuildingCost;
@@ -58,7 +57,7 @@ public class GameController : MonoBehaviour {
         {
             _numberOfEnemiesLeft = value;
             _gameText.EnemiesLeftTextUpdate();
-            if(_numberOfEnemiesLeft <= 0)
+            if(_numberOfEnemiesLeft <= 0 && _levelController.AllEnemiesSpawned)
             {
                 _levelController.EndRound();
             }

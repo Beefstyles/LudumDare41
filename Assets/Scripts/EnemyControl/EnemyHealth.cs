@@ -17,7 +17,7 @@ public class EnemyHealth : MonoBehaviour {
         _streakCounter = FindObjectOfType<StreakCounter>();
         _levelController = FindObjectOfType<LevelController>();
 
-        Health *= _levelController.HealthOfEnemiesMultiplication;
+        Health += _levelController.HealthOfEnemiesMultiplication;
     }
 
     void OnTriggerEnter(Collider coll)

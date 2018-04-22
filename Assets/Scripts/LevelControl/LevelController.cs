@@ -19,6 +19,7 @@ public class LevelController : MonoBehaviour {
     public float TimeBetweenSpawnDivision = 1F;
     public float HealthOfEnemiesMultiplication = 1.05F;
     public float SpeedOfEnemiesMultiplication = 1F;
+    public bool AllEnemiesSpawned = false;
 
     void Start()
     {
@@ -34,6 +35,7 @@ public class LevelController : MonoBehaviour {
         BuildMode = false;
         _buildController.BuildMenu.SetActive(false);
         StartCoroutine("DelayEnemySpawn");
+        AllEnemiesSpawned = false;
     }
 
     public void EndRound()
@@ -43,16 +45,19 @@ public class LevelController : MonoBehaviour {
         BuildMode = true;
         _soundBarMovement.ResetSongBar();
         UpdateValues();
+        AllEnemiesSpawned = false;
     }
 
     IEnumerator DelayEnemySpawn()
     {
+        _gameController.NumberOfEnemiesLeft = NumberOfEnemiesToSpawn;
         for (int i = Mathf.FloorToInt(NumberOfEnemiesToSpawn); i > 0; i--)
         {
             yield return new WaitForSeconds(TimeBetweenSpawn);
             Instantiate(Enemy, new Vector3(EnemySpawnPoint.position.x, 3F, EnemySpawnPoint.position.z), Quaternion.identity);
-            _gameController.NumberOfEnemiesLeft++;
+            //_gameController.NumberOfEnemiesLeft++;
         }
+        AllEnemiesSpawned = true;
     }
 
     void UpdateValues()
